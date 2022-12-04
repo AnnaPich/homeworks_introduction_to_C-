@@ -6,7 +6,6 @@
 
 Console.Clear();
 
-
 //метод проверки числа:
 void CheckNumer (int quantity)
 {
@@ -24,9 +23,6 @@ void CheckNumer (int quantity)
     {Console.WriteLine ($"Число {originQuantity} -> полиндром");}
     }
 }
-//if(digitEnd != digitOne) Console.WriteLine ($"Число {quantity} -> не полиндром");
-//double digitThird = (quantity - digitOne * Math.Pow(10, count))/10
-//double digitOne = quantity / Math.Pow (10, count);
 
 //метод приема данных:
 int DataEntry (string str)
