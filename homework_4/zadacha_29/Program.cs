@@ -30,4 +30,6 @@ int [] NewArray(int [] array)
 int [] array = new int [8];
 NewArray(array);
 PrintArray(array);
-Console.Write($"-> [{array[0]}, {array[1]}, {array[2]}, {array[3]}, {array[4]}, {array[5]}, {array[6]}, {array[7]}]");
+//Console.Write($"-> [{array[0]}, {array[1]}, {array[2]}, {array[3]}, {array[4]}, {array[5]}, {array[6]}, {array[7]}]");
+string s = String.Join(", ", array);
+Console.WriteLine($"-> [{s}]");
