@@ -4,6 +4,13 @@
 //b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
 
+void FindGeneralPoint(int k1, int b1, int k2, int b2)
+{
+    double x = Math.Round((double)(b2 - b1) / (k1 - k2), 2);
+    double y = Math.Round((k1 * x + b1), 2);
+    Console.WriteLine("Координаты точки пересечения линий: -> (" + x + ";" + y + ')');
+}
+
 //Прием числа:
 int DataEntryNumber(string str)
 {
@@ -19,6 +26,5 @@ int b1 = DataEntryNumber($"введите коэффициент b1: ");
 int k2 = DataEntryNumber($"введите угловой коэффициент k2: ");
 int b2 = DataEntryNumber($"введите коэффициент b2: ");
 
-double x = Math.Round((double)(b2 - b1) / (k1 - k2), 2);
-double y = Math.Round((k1 * x + b1), 2);
-Console.WriteLine("координаты точки пересечения линий: -> (" + x + ";" + y + ')');
+FindGeneralPoint(k1, b1, k2, b2);
+
