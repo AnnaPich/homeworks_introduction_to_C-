@@ -8,19 +8,27 @@
 //15 18
 
 //Метод, умножающий матрицу 1 на матрицу 2:
-int[,] MultMatrixs(int[,] arr1, int[,] arr2)
+void MultMatrixs(int[,] arr1, int[,] arr2)
 {
-    
-    for (int i = 0; i < array.GetLength(0); i++)
+    int[,] resultArray = new int[arr1.GetLength(0), arr2.GetLength(1)];
+    int result = 0;
+
+    for (int i = 0; i < arr1.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int k = 0; k < arr2.GetLength(1); k++)
         {
-            Console.Write(array[i, j] + " ");
+            for (int j = 0; j < arr1.GetLength(1); j++)
+            {
+                result = result + arr1[i, j] * arr2[j, k];
+                
+            }
+            resultArray[i, k] = result;
+            result = 0;
+            Console.Write("[" + resultArray[i, k] + "] ");
         }
-        Console.WriteLine(); 
+        Console.WriteLine();
+    }
 }
-
-
 
 //метод печати маcсива:
 void PrintMatrix(int[,] array)
@@ -52,12 +60,15 @@ int[,] FillArrayWithRandomNumbers(int rows, int columns, int leftRange, int righ
 //программа:
 
 int leftRange = 0;
-int rightRange = 10;
-int rows1 = 4;
-int columns = 4;
-int columns2 = 4;
+int rightRange = 5;
+int rows1 = 2;
+int columns = 3;
+int columns2 = 3;
 
 int[,] matrix1 = FillArrayWithRandomNumbers(rows1, columns, leftRange, rightRange);
 PrintMatrix(matrix1);
+Console.WriteLine();
 int[,] matrix2 = FillArrayWithRandomNumbers(columns, columns2, leftRange, rightRange);
 PrintMatrix(matrix2);
+Console.WriteLine();
+MultMatrixs(matrix1, matrix2);
