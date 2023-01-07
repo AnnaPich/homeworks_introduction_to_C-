@@ -8,7 +8,7 @@ int SumNumbers(int numberM, int numberN)
 {
     if (numberM <= numberN)
     {
-    return (PrintNumbers(numberM + 1, numberN) + numberM);
+    return (SumNumbers(numberM + 1, numberN) + numberM);
     }
     return 0;
 }
